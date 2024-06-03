@@ -6,7 +6,7 @@ function VerifyJWT(req,res,next){
          req.token=  bearerToken
          next()
     } else{
-          res.redirect("/signup")
+          res.redirect("/login")
     }
 }
 

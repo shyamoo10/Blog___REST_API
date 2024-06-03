@@ -42,6 +42,11 @@ exports.VerifyLogin= asyncHandler(async(req,res,next)=>{
     if(match){
         // authentication successfull
          jwt.sign({user:user}, 'secretkey', (err,token)=>{
+            if(err){
+                res.json({
+                    message:"failed to authenticate"
+                })
+            }
             res.json({
                 token:token
             })
