@@ -19,7 +19,7 @@ router.get("/signup",(req,res)=> res.json("please sign up !!!!"))
 })     
  
 router.get("/posts", PostController.HomePage)
-router.post("/posts",PostController.CreatePost)
+router.post("/posts",IsAdmin,PostController.CreatePost)
 router.get("/posts/:postId",PostController.RetriveIndividualPost)
 router.put("/posts/:postId",IsAdmin,PostController.UpdateIndividualPost)
 router.delete("/posts/:postId",IsAdmin,PostController.DeleteIndividualPost)
