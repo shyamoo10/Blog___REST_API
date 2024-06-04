@@ -11,7 +11,8 @@ exports.Signup= asyncHandler(async(req,res,next)=>{
   const newUser=   new User({
      username: req.body.username,
      email:req.body.email,
-     password:hashedPassword
+     password:hashedPassword,
+     isAdmin:req.body.isadmin
   })
       const existingUser= await User.findOne({email:req.body.email})
       if(existingUser){

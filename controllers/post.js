@@ -21,7 +21,7 @@ exports.CreatePost= asyncHandler(async(req,res,next)=>{
 
     })
     await newPost.save()
-    console.log("post created")
+    
     res.redirect("/posts")
 })
 exports.RetriveIndividualPost= asyncHandler(async(req,res,next)=>{
